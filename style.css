@@ -1,0 +1,91 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e2f;
+    color: #f5f5f5;
+    font-size: 50px;
+}
+
+.wrapper {
+    text-align: center;
+    background: linear-gradient(145deg, #2c2c40, #1f1f35);
+    border: 1px solid #3d3d5c;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.wrapper:hover {
+    transform: translateY(-35px);
+    background: linear-gradient(145deg, #3d3d57, #292945);
+    color: antiquewhite;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+}
+
+.heart-modal {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #342472;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: rotate(-45deg) scale(1);
+    }
+    to {
+        transform: rotate(-45deg) scale(1.05);
+    }
+}
+
+.heart-modal::before,
+.heart-modal::after {
+    content: "";
+    position: absolute;
+    width: 400px; /* Было 200 */
+    height: 400px; /* Было 180 */
+    background: #342472;
+    border-radius: 50%;
+}
+
+.heart-modal::before {
+    top: -200px;
+    left: 1px;
+  }
+  
+  .heart-modal::after {
+    top: 1px;
+    left: 200px;
+  }
+
+  .heart-text {
+    position: absolute;
+    top: 13%;
+    left: 20%;
+    transform: rotate(45deg);
+    color: #562c90;
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+    pointer-events: none; /* Чтобы не мешал клику по overlay */
+    z-index: 999;
+}
