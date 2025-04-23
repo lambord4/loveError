@@ -162,8 +162,8 @@ body {
     }
     
     .heart-text {
-        top: 13%;
-        left: 14%;
+        top: 13%;  /*13%*/
+        left: 12%;  /*14%*/
         font-size: 20px;
     }
     .mobile {
