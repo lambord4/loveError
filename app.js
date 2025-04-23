@@ -7,7 +7,7 @@ document.querySelector('.wrapper').addEventListener('click', () => {
 
     const text = document.createElement('div');
     text.className = 'heart-text';
-    text.textContent = 'Мое сердце бьется чаще, когда ты рядом! Ты мое счастье!        🖤';
+    text.textContent = 'Мое сердце бьется чаще, когда ты рядом! Ты мое счастье! 🖤';
     heart.appendChild(text);
 
     overlay.appendChild(heart);
@@ -19,3 +19,16 @@ document.querySelector('.wrapper').addEventListener('click', () => {
         }
     });
 });
+
+const egg = document.querySelector('.egg')
+const easter = document.querySelector('.easter')
+
+egg.addEventListener('click',() => {
+    egg.classList.add('hidden')
+    easter.classList.remove('hidden')
+})
+
+easter.addEventListener('click', () => {
+    egg.classList.remove('hidden')
+    easter.classList.add('hidden')
+})
